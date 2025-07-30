@@ -1,0 +1,4 @@
+certbot-log
+webroot
+certs
+.env
