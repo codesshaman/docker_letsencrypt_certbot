@@ -35,8 +35,5 @@ ExecStart=/usr/local/bin/certbot-docker-renew.sh"
 
     # Перезапускаем systemd для применения изменений
     sudo systemctl daemon-reload
-    sudo systemctl enable certbot.service
-    sudo systemctl start certbot.service
-    sudo systemctl status certbot.service
     echo "Systemd перезагружен."
 fi
