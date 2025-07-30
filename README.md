@@ -25,8 +25,26 @@ cat /usr/local/bin/certbot-docker-renew.sh
 
 #### Make systemctl service
 
-
+```
+make service
+```
 
 #### Make launch timer
 
+```
+make timer
+```
 
+#### First start
+
+```
+make build
+```
+
+#### Check certificates
+
+Find your certificate in folder:
+
+```
+ls ./certs
+```
