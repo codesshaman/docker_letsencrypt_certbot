@@ -1,7 +1,14 @@
 ---
 
-
 services:
+  nginx:
+    image: nginx:alpine
+    container_name: cert-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./webroot:/usr/share/nginx/html:ro
+
   certbot:
     image: $CERTBOT_IMAGE
     container_name: $CERTBOT_NAME
