@@ -1,0 +1,19 @@
+---
+
+
+services:
+  certbot:
+    image: $CERTBOT_IMAGE
+    container_name: $CERTBOT_NAME
+    volumes:
+      - ./certs:/etc/letsencrypt            # Хранилище для сертификатов
+      - ./certbot-log:/var/log/letsencrypt  # Логи certbot
+      - ./webroot:/var/www/html             # Каталог для webroot валидации
+    command: >
+      certonly --webroot
+      --webroot-path=/var/www/html
+      --email $USER_EMAIL
+      --agree-tos
+      --no-eff-email
+      -d $DOMAIN_NAME
+      -d www.$DOMAIN_NAME
