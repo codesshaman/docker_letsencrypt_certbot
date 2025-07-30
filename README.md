@@ -46,5 +46,5 @@ make build
 Find your certificate in folder:
 
 ```
-ls ./certs
+ls ./certs/archive/<your_domain.com>
 ```

@@ -2,12 +2,15 @@
 
 services:
   nginx:
-    image: $NGINX_IMAGE
-    container_name: $NGINX_NAME
+    image: ${NGINX_IMAGE}
+    container_name: ${NGINX_NAME}
     ports:
       - "80:80"
     volumes:
       - ./webroot:/usr/share/nginx/html:ro
+    depends_on:
+      certbot:
+        condition: service_completed_successfully
 
   certbot:
     image: $CERTBOT_IMAGE
