@@ -26,7 +26,10 @@ else
 
 cd ${CURRENT_DIR} || exit 1
 ${COMPOSE_ROOT} run --rm ${CONTAINER_NAME} renew --quiet
-# ${COMPOSE_ROOT} exec nginx nginx -s reload 2>/dev/null || true"
+# ${COMPOSE_ROOT} exec nginx nginx -s reload 2>/dev/null || true
+sleep 60
+${COMPOSE_ROOT} down
+"
 
     # Создаём файл под sudo и записываем содержимое
     echo "$SERVICE_CONTENT" | sudo tee "$SERVICE_PATH" > /dev/null
