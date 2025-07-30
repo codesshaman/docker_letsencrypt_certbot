@@ -2,8 +2,8 @@
 
 services:
   nginx:
-    image: nginx:alpine
-    container_name: cert-nginx
+    image: $NGINX_IMAGE
+    container_name: $NGINX_NAME
     ports:
       - "80:80"
     volumes:
